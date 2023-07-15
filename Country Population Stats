@@ -1,4 +1,4 @@
-/* Put your data in here and query it! */
+In this SQL, I'm querying a database with a table quantify statistics about Countries' Population data.
 CREATE TABLE countries(
    name                    TEXT PRIMARY KEY,
    population              INTEGER,
@@ -213,21 +213,26 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Seychelles',98347,0.62,608,214,460,-200,2.50,34.00,0);
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Antigua and Barbuda',97929,0.84,811,223,440,0,2.00,34.00,0);
 
-
+#1. Which country has the higher population?
 SELECT name, MAX(population) as MaxPopulation FROM countries;
 
+#2. Which country has the lowest population?
 SELECT name, MIN(population) as MinPopulation FROM countries;
 
+#3. What is the average fertility rate across all countries?
 SELECT AVG(fertility_rate) as AverageFertilityRate FROM countries;
 
+#4. Which countries have an aging polulation?
 SELECT name, median_age FROM countries
     GROUP BY name
     HAVING median_age > 40;
-    
+
+#5. Which countries have the highest fertility rates?
 SELECT name, fertility_rate FROM countries
     GROUP BY name
     HAVING fertility_rate > 4;
 
+#6. Which countries are above or below fertility replacement level?
 SELECT name, fertility_rate,
     CASE 
         WHEN fertility_rate > 2.1 THEN "Above Replacement Level"
@@ -236,6 +241,7 @@ SELECT name, fertility_rate,
          FROM countries
          ORDER BY fertility_replacement;
 
+#7. How many countries are above vs below fertility replacement level?
 SELECT COUNT (*),
  CASE 
         WHEN fertility_rate > 2.1 THEN "Above Replacement Level"
@@ -244,7 +250,7 @@ SELECT COUNT (*),
          FROM countries
          GROUP BY fertility_replacement;
 
-
+#8. Which countries have median population over 35 as well as below fertility replacement level?
 SELECT name, fertility_rate, median_age FROM countries 
    WHERE fertility_rate < 2.1 AND median_age > 35;
 
