@@ -243,4 +243,8 @@ SELECT COUNT (*),
     END as "fertility_replacement"
          FROM countries
          GROUP BY fertility_replacement;
-            
+
+
+SELECT name, fertility_rate, median_age FROM countries 
+   WHERE fertility_rate < 2.1 AND median_age > 35;
+
