@@ -227,3 +227,11 @@ SELECT name, median_age FROM countries
 SELECT name, fertility_rate FROM countries
     GROUP BY name
     HAVING fertility_rate > 4;
+
+SELECT name, fertility_rate,
+    CASE 
+        WHEN fertility_rate > 2.1 THEN "Above Replacement Level"
+        ELSE "Below Replacement Level"
+    END as "fertility_replacement"
+         FROM countries
+         ORDER BY fertility_replacement;
