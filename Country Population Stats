@@ -235,3 +235,12 @@ SELECT name, fertility_rate,
     END as "fertility_replacement"
          FROM countries
          ORDER BY fertility_replacement;
+
+SELECT COUNT (*),
+ CASE 
+        WHEN fertility_rate > 2.1 THEN "Above Replacement Level"
+        ELSE "Below Replacement Level"
+    END as "fertility_replacement"
+         FROM countries
+         GROUP BY fertility_replacement;
+            
