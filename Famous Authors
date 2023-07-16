@@ -1,0 +1,42 @@
+
+
+CREATE TABLE authors (id INTEGER PRIMARY KEY,
+    full_name TEXT,
+    Place_of_birth TEXT);
+    
+CREATE TABLE books (id INTEGER PRIMARY KEY,
+    book_name TEXT,
+    author_id INTEGER,
+    genre TEXT);
+    
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("J.K. Rowling", "UK");
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Steven King", "ME");
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("George R. R. Martin", "NJ");
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("C.S. Lewis", "UK");
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Toni Morrison", "OH");
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Dr Seuss", "MA");
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Agatha Christie", "UK");   
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Frank Herbert", "WA");   
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Danielle Steel", "NY");   
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Harold Robbins", "NY");  
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Gillian Flynn", "MO");  
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Alice Walker", "GA");  
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Louisa May Alcott", "PA");       
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Kathryn Stockett", "MS");  
+INSERT INTO authors (full_name, Place_of_birth)
+    VALUES ("Suzanne Collins", "CT");  
+    
