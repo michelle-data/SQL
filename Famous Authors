@@ -1,4 +1,4 @@
-
+Here I created my own tables with a small set of data for Authors and Books. Then I answered questions that the data could answer.
 
 CREATE TABLE authors (id INTEGER PRIMARY KEY,
     full_name TEXT,
@@ -77,10 +77,16 @@ FROM authors
 JOIN books
 ON author_id = authors.id;
 
-#2. Which authors are from the UK?
+#2. Which authors wrote books in the genre of Historical Fiction?
+SELECT authors.full_name, books.book_name, books.genre
+FROM authors
+JOIN books
+ON author_id = authors.id
+WHERE genre = "Historical Fiction"
+GROUP BY authors.full_name;
+
+#3. Which authors are from the UK?
 SELECT authors.full_name, place_of_birth 
 FROM authors WHERE place_of_birth = "UK";
-
-#3. 
 
 
