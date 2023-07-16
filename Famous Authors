@@ -71,3 +71,10 @@ INSERT INTO books (book_name, author_id, genre)
     VALUES ("The Help", 14, "Historical Fiction"); INSERT INTO books (book_name, author_id, genre)
     VALUES ("The Hunger Games", 15, "Science Fiction");   
 
+#1. Which book did each author write?
+SELECT authors.full_name, books.book_name
+FROM authors
+JOIN books
+ON author_id = authors.id;
+
+
