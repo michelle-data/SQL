@@ -77,4 +77,10 @@ FROM authors
 JOIN books
 ON author_id = authors.id;
 
+#2. Which authors are from the UK?
+SELECT authors.full_name, place_of_birth 
+FROM authors WHERE place_of_birth = "UK";
+
+#3. 
+
 
