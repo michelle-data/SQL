@@ -39,4 +39,35 @@ INSERT INTO authors (full_name, Place_of_birth)
     VALUES ("Kathryn Stockett", "MS");  
 INSERT INTO authors (full_name, Place_of_birth)
     VALUES ("Suzanne Collins", "CT");  
-    
+
+
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("Harry Potter", 1, "Fantasy");  
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("IT", 2, "Horror");    
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("A Game of Thrones", 3, "Fantasy");   
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("The Lion, The Witch & The Wardrobe", 4, "Fantasy");    
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("Beloved", 5, "Historical Fiction");  
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("The Cat in the Hat", 6, "Children's Fiction");  
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("Murder on the Orient Express", 7, "Crime Fiction");  
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("Dune", 8, "Fantasy Fiction"); 
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("The Gift", 9, "Romance");
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("The Carpetbaggers", 10, "Fiction");
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("Gone Girl", 11, "Thriller");   
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("The Color Purple", 12, "Domestic Fiction");    
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("Little Women", 13, "Domestic Fiction");    
+INSERT INTO books (book_name, author_id, genre)
+    VALUES ("The Help", 14, "Historical Fiction"); INSERT INTO books (book_name, author_id, genre)
+    VALUES ("The Hunger Games", 15, "Science Fiction");   
+
