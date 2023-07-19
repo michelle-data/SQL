@@ -1,4 +1,4 @@
-# For this project, I downloaded Spotify data from Kaggle.
+ # For this project, I downloaded Spotify data from Kaggle.
 # Then I created a table to insert Spotify data into.
 # Finally, I performed analytics on the data using SQL. 
 
@@ -42,3 +42,13 @@ LIMIT 1
 SELECT AVG(danceability) from BIT_DB.Spotifydata
 ORDER BY popularity desc
 LIMIT 10
+
+# I Calculated the average popularity for the artists in the Spotify data table. 
+Then, for every artist with an average popularity of 90 or above, I showed their name, 
+their average popularity, and labeled them as a “Top Star” using a CTE.
+WITH tempTable AS (
+SELECT artist_name, AVG(popularity) as Popularity from Spotifydata
+GROUP BY artist_name)
+
+SELECT artist_name, Popularity, 'Top Star' AS Tag from tempTable
+WHERE Popularity > 90
