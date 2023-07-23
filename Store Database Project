@@ -1,0 +1,46 @@
+#In this SQL, I'm querying a database with multiple tables in it to quantify information about store invoices. 
+
+#1. Show Customers (their full names, customer ID, and country) who are not in France 
+SELECT FirstName, LastName, CustomerID, Country FROM chinook.customers
+WHERE Country <> "France"
+
+#2.	Show only the Customers from the US.
+SELECT FirstName, LastName, CustomerID, Country FROM chinook.customers
+WHERE Country = "USA"
+
+#3.	Find the Invoices of customers who are from Germany. 
+The resulting table should show the customer's full name, Invoice ID, Date of the invoice, and billing country.
+SELECT c.FirstName, c.LastName, i.CustomerID, i.InvoiceDate, i.BillingCountry FROM chinook.invoices i 
+LEFT JOIN chinook.customers c
+ON i.CustomerID=c.CustomerID
+WHERE c.Country = "Germany"
+
+#4. Show the Employees who are Sales Agents.
+SELECT FirstName, LastName, Title FROM chinook.employees
+WHERE Title = "Sales Support Agent"
+
+#5.	Find a unique/distinct list of billing countries from the Invoice table.
+SELECT DISTINCT(BillingCountry) FROM chinook.invoices
+
+#6.	How many Invoices were there in 2011?
+SELECT COUNT(invoiceID) FROM chinook.invoices
+WHERE InvoiceDate like '2011%'
+
+#7.	What are the total sales for 2013?
+SELECT SUM(Total) FROM chinook.invoices
+WHERE InvoiceDate like '2013%'
+
+#8.	Write a query that includes the purchased track name with each invoice line ID.
+SELECT t.Name, i.InvoiceLineID FROM chinook.invoice_items i
+INNER JOIN chinook.tracks t
+ON i.TrackID =t.TrackID
+
+#9.	Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+SELECT t.Name AS Track_Name, a.Title AS Album_Name, m.Name AS Media_Type, g.Name AS Genre FROM chinook.tracks t
+JOIN chinook.albums a
+ON t.AlbumId=a.AlbumId
+JOIN chinook.media_types m
+ON t.MediaTypeId=m.MediaTypeId
+JOIN chinook.genres g 
+ON t.GenreId=g.GenreID
+
